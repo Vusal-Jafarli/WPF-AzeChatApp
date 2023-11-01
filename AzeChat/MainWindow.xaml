@@ -1,0 +1,155 @@
+﻿<Window x:Class="AzeChat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AzeChat"
+        mc:Ignorable="d"
+        Title="AzeWhat" Height="600" Width="405">
+    <Grid>
+        <Image Source="Resources/Background.jpg" Stretch="UniformToFill" />
+        <Grid Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+
+
+
+
+
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <ListView IsHitTestVisible="False"   HorizontalContentAlignment="Right"  ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="Transparent" Grid.Column="1" ItemsSource="{Binding messages_user_1}" BorderThickness="0" Margin="10,0,-18,0" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+
+                            <Border  Margin="0 0 0 45" BorderThickness="0" CornerRadius="10" Background="#e1ffd3">
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Foreground="Black" FontSize="11" Grid.Column="0" Margin="3 9 2 2" Content="{Binding time}"/>
+                                        <Image Height="12" Width="12" Grid.Column="1" Margin="0 9 6 2 "   Source="Resources/double-check.png"/>
+
+                                    </Grid>
+
+
+                                    <Label  FontSize="15" Grid.Column="0" Margin="2" VerticalContentAlignment="Top"  Content="{Binding text}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+                <ListView  IsHitTestVisible="False"  ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="Transparent" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding messages_user_2}" BorderThickness="0" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+
+                            <Border Margin="0 45 0 0" BorderThickness="0" CornerRadius="10" Background="#e1ffd3">
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Foreground="Black" FontSize="11" Grid.Column="0" Margin="3 9 2 2" Content="{Binding time}"/>
+                                        <Image Height="12" Width="12" Grid.Column="1" Margin="0 9 6 2 "   Source="Resources/double-check.png"/>
+
+                                    </Grid>
+
+
+                                    <Label  FontSize="15" Grid.Column="0" Margin="2" VerticalContentAlignment="Top"  Content="{Binding text}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+
+            </Grid>
+
+            <Grid Grid.Row="0" Background="White">
+
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+
+
+                     <Image Grid.Column="1" Source="Resources/User_photo.png" Width="50" Height="50" ClipToBounds="True" />
+
+
+                    <Button Margin="5" Background="White" BorderThickness="0" HorizontalContentAlignment="Left" Grid.Column="0">
+                        <Image Grid.Column="0"  Source="Resources/back.png" Width="15" Height="15"/>
+                    </Button>
+
+                    <Button Margin="5" Background="White" BorderThickness="0" HorizontalContentAlignment="Left" Grid.Column="3">
+                        <Image   Source="Resources/cam-recorder.png" Width="30" Height="30"/>
+                    </Button>
+                    
+                    <Button Margin="5" Background="White" BorderThickness="0" HorizontalContentAlignment="Left" Grid.Column="4">
+                        <Image   Source="Resources/telephone.png" Width="22" Height="22"/>
+                    </Button>
+                    <Label Grid.Column="2" Content="Jony" FontSize="21" Margin="5 3 0 0" />
+                    
+                </Grid>
+            </Grid>
+
+
+            <Grid Grid.Row="2" Background="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+            
+                <Button Margin="5" Background="White" BorderThickness="0" HorizontalContentAlignment="Left" Grid.Column="0">
+                    <Image   Source="Resources/plus.png" Width="20" Height="20"/>
+                </Button>
+
+                <Button Margin="5" Background="White" BorderThickness="0" HorizontalContentAlignment="Left" Grid.Column="2">
+                    <Image  Margin="5 8 5 5" Source="Resources/camera.png" Width="30" Height="28"/>
+                </Button>
+
+                <Button Margin="5" Background="White" BorderThickness="0" HorizontalContentAlignment="Left" Grid.Column="3">
+                    <Image   Source="Resources/microphone.png" Width="30" Height="24"/>
+                </Button>
+
+                <TextBox Grid.Column="1" BorderThickness="0" FontSize="15" VerticalContentAlignment="Center"/>
+
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
